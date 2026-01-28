@@ -1,0 +1,56 @@
+* {
+    font-family: "SF Pro Display", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: rgba(25, 25, 25, 0.00); 
+    color: #ffffff;
+    border-radius: 12px;
+}
+
+/* Fenster-Titel */
+#window {
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+/* Module rechts */
+#clock, #network, #bluetooth, #battery, #tray, #privacy {
+    padding: 0 6px;
+    margin: 4px 2px;
+}
+
+/* Spezielle Rundung für die Uhr in der Mitte */
+#clock {
+    font-weight: 600;
+}
+
+/* Tray Icons etwas dezenter */
+#tray {
+    /* margin-right: 5px; */
+}
+
+/* Battery Farben */
+#battery.charging {
+    color: #34c759; /* macOS Green */
+}
+
+#battery.critical:not(.charging) {
+    color: #ff3b30; /* macOS Red */
+}
+
+/* Tooltip Styling */
+tooltip {
+    background: rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+tooltip label {
+    color: #ffffff;
+    padding: 8px;
+}
