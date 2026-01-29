@@ -198,8 +198,8 @@ layout {
         //off
 
         width 3
-        active-color "#5E6E81" // {active}
-        inactive-color "#090a0c" // {inactive}
+        active-color "#53699A" // {active}
+        inactive-color "#050A13" // {inactive}
         urgent-color "#FF5555" // {urgent}
 
 
@@ -268,7 +268,6 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "~/.config/niri/update_wallpaper.sh"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark"
@@ -279,7 +278,7 @@ spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "gtk-theme" "Ad
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -331,6 +330,30 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"bloonstd6$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    // Einfach nur 'match' verwenden
+    match app-id="wallpaper-picker"
+
+    // Diese Flags direkt setzen
+    open-floating true
+    
+    // In Niri werden Dimensionen oft so definiert:
+    default-column-width { proportion 0.8; }
+    default-window-height { proportion 0.8; }
+    
+    // Alternativ für feste Pixel (falls dein Niri das unterstützt):
+    // default-floating-width 1000
+    // default-floating-height 600
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -363,15 +386,14 @@ binds {
 
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
-    Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T { spawn "kitty"; }
-    Mod+Space { spawn-sh "pkill rofi || rofi -show drun"; }
     Super+Alt+L { spawn "swaylock"; }
     Super+B {spawn "firefox";}
-
-    Mod+Alt+W { spawn "~/.config/niri/update_wallpaper.sh"; }
+    Mod+Space { spawn "kitty" "fsel" "-d"; }
+    Mod+Shift+W { spawn "kitty" "--class" "wallpaper-picker" "bash" "-ic" "~/.config/scripts/wallpaper-picker.sh"; }
+    
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -627,9 +649,4 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
-}
-
-layer-rule {
-    match namespace="^swww-daemonoverlay$"
-    place-within-backdrop true
 }

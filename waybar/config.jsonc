@@ -6,21 +6,29 @@
     "margin-right": 12,
     "spacing": 4,
 
-    // "modules-left": [
-    //     "niri/workspaces",
-    // ],
+    "modules-left": [
+        "custom/privacy-dots",
+    ],
     // "modules-center": [
     // ],
     "modules-right": [
         "tray",
-        "privacy",
         "bluetooth",
         "network",
         "battery",
         "clock"
     ],
 
-    // Niri Workspaces (ersetzt Hyprland)
+    "custom/privacy-dots": {
+        "exec": "privacy-dots",
+        "return-type": "json",
+        "interval": 3,
+        "format": "{text}",
+        "tooltip": true,
+        "escape": false,
+        "markup": "pango"
+    },
+
     "niri/workspaces": {
         "format": "{icon}",
         "format-icons": {
