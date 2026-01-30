@@ -194,12 +194,12 @@ layout {
     // You can also add a border. It's similar to the focus ring, but always visible.
     border {
         // The settings are the same as for the focus ring.
-        // If you enable the border, you probably want to disable the focus ring.
+        // If you enable the border,you probably want to disable the focus ring.
         //off
 
         width 3
-        active-color "#53699A" // {active}
-        inactive-color "#050A13" // {inactive}
+        active-color "#BB6957" // {active}
+        inactive-color "#0a0a0c" // {inactive}
         urgent-color "#FF5555" // {urgent}
 
 
@@ -269,6 +269,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
+spawn-at-startup "spicetify" "watch" "-l"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark"
 spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "gtk-theme" "Adwaita-dark"
@@ -389,9 +390,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T { spawn "kitty"; }
-    Super+Alt+L { spawn "swaylock"; }
-    Super+B {spawn "firefox";}
-    Mod+Space { spawn "kitty" "fsel" "-d"; }
+    Mod+B {spawn "firefox";}
     Mod+Shift+W { spawn "kitty" "--class" "wallpaper-picker" "bash" "-ic" "~/.config/scripts/wallpaper-picker.sh"; }
     
 
@@ -628,9 +627,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Alt+Shift+3 { screenshot-screen; }
+    Alt+Shift+4 { screenshot; }
+    Alt+Shift+5 { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
