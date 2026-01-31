@@ -12,13 +12,11 @@ window#waybar {
     border-radius: 12px;
 }
 
-/* Fenster-Titel */
 #window {
     font-weight: bold;
     padding-left: 10px;
 }
 
-/* Module rechts */
 #custom-privacy-dots, #clock, #network, #bluetooth, #battery, #tray, #privacy {
     padding: 0 6px;
     margin: 4px 2px;
@@ -28,17 +26,14 @@ window#waybar {
   letter-spacing: 3px;
 }
 
-/* Spezielle Rundung für die Uhr in der Mitte */
 #clock {
     font-weight: 600;
 }
 
-/* Tray Icons etwas dezenter */
 #tray {
     /* margin-right: 5px; */
 }
 
-/* Battery Farben */
 #battery.charging {
     color: #34c759; /* macOS Green */
 }
@@ -47,7 +42,6 @@ window#waybar {
     color: #ff3b30; /* macOS Red */
 }
 
-/* Tooltip Styling */
 tooltip {
     background: rgba(40, 40, 40, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.2);

@@ -1,13 +1,5 @@
 # my-niri-dotfiles
 
-```
-sudo pacman -S git gnome-keyring  pipewire-pulse pipewire-alsa pipewire-jack  nwg-look v4l2loopback-dkms jq dbus
-```
-
-
-
-
-
 # Essentials
 
 ```
