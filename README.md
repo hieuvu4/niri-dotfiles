@@ -11,13 +11,19 @@ sudo pacman -S git gnome-keyring  pipewire-pulse pipewire-alsa pipewire-jack  nw
 # Essentials
 
 ```
-sudo pacman -Syu niri xorg-xwayland xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk waybar swww pipewire wireplumber pulsemixer
+sudo pacman -Syu niri xorg-xwayland xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk waybar swww 
 ```
 
 ```
 sudo pacman -S kitty htop unzip vim neovim ranger  python-pillow python-pywal fastfetch
 ```
 
+
+## Audio
+
+```
+sudo pacman -S pipewire wireplumber pulsemixer
+```
 
 ## Fonts
 ```
@@ -50,11 +56,10 @@ spicetify backup apply
 spicetify update
 ```
 
-
 # Gaming
 
 ```
-sudo pacman -S steam 
+sudo pacman -S steam gamescope
 ```
 
 ```
