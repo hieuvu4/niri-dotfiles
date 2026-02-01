@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG="$HOME/.config/niri/config.kdl"
+CONFIG="$HOME/.config/niri/conf/layout.kdl"
 WALL_DIR="$HOME/.config/wallpaper"
 COLOR_CACHE="$HOME/.cache/wal/colors"
 SPICE_THEME="$HOME/.config/spicetify/Themes/wal"
