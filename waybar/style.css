@@ -30,8 +30,8 @@ window#waybar {
     font-weight: 600;
 }
 
-#tray {
-}
+/* #tray {
+} */
 
 #battery.charging {
     color: #34c759;

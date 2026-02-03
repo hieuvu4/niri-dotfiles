@@ -7,7 +7,7 @@
     "spacing": 4,
 
     "modules-left": [
-        "custom/privacy-dots",
+        "custom/privacy-dots"
     ],
     // "modules-center": [
     // ],
