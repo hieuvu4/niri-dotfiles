@@ -5,6 +5,8 @@ WALL_DIR="$HOME/.config/wallpaper"
 COLOR_CACHE="$HOME/.cache/wal/colors"
 SPICE_THEME="$HOME/.config/spicetify/Themes/wal"
 
+OBSIDIAN_VAULT="$HOME/Documents/Obsidian"
+
 TMP_FILE=$(mktemp)
 ranger --choosefile="$TMP_FILE" "$WALL_DIR"
 SELECTED=$(cat "$TMP_FILE")
@@ -21,6 +23,9 @@ cp "$HOME/.cache/wal/spicetify" "$SPICE_THEME/color.ini"
 touch "$HOME/.config/vesktop/themes/pywal.theme.css"
 
 pywalfox update
+
+mkdir -p "$OBSIDIAN_VAULT/.obsidian/snippets/"
+cp "$HOME/.cache/wal/colors.css" "$OBSIDIAN_VAULT/.obsidian/snippets/wal-colors.css"
 
 RAW_ACT=$(sed -n '3p' "$COLOR_CACHE" | tr -d '[:space:]#')
 RAW_INACT=$(sed -n '1p' "$COLOR_CACHE" | tr -d '[:space:]#')

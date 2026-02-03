@@ -1,0 +1,57 @@
+/* pywal-map.css - FINALER TAB FIX */
+
+body {
+    --background-primary: var(--color0);
+    --background-secondary: var(--color0);
+    --background-secondary-alt: var(--color0);
+    --background-modifier-border: var(--color8);
+
+    --text-normal: var(--color7);
+    --text-muted: var(--color8);
+    --text-faint: var(--color8);
+    
+    --interactive-accent: var(--color1);
+    --interactive-accent-hover: var(--color2);
+
+    --tab-text-color: var(--color8);
+    --tab-text-color-focused: var(--color7);
+    --tab-text-color-active: var(--color7);
+    --tab-container-background: var(--color0);
+    
+    --titlebar-text-color: var(--color7);
+    --titlebar-background: var(--color0);
+    --titlebar-background-focused: var(--color0);
+}
+
+.workspace-tab-header-inner-title {
+    color: var(--color8) !important;
+}
+
+.mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+    color: var(--color7) !important;
+    font-weight: bold !important;
+}
+
+.workspace-tab-header-inner-close-button {
+    color: var(--color8) !important;
+}
+
+.workspace-tab-header-container {
+    background-color: var(--color0) !important;
+}
+
+.graph-view.color-fill {
+    color: var(--color1); 
+}
+.graph-view.color-line {
+    color: var(--color8);
+}
+.graph-view.color-text {
+    color: var(--color7);
+}
+.graph-view.color-fill-highlight {
+    color: var(--color2);
+}
+.graph-view.color-line-highlight {
+    color: var(--color2); 
+}

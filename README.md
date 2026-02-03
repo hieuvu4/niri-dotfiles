@@ -7,7 +7,7 @@ sudo pacman -Syu niri xorg-xwayland xwayland-satellite xdg-desktop-portal-gnome 
 ```
 
 ```
-sudo pacman -S kitty htop unzip vim neovim ranger  python-pillow python-pywal fastfetch
+sudo pacman -S kitty htop unzip vim neovim ranger  python-pillow python-pywal fastfetch obsidian
 ```
 
 
