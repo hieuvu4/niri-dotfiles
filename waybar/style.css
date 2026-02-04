@@ -1,3 +1,5 @@
+@import "/home/hieu/.cache/wal/colors-waybar.css";
+
 * {
     font-family: "SF Pro Display", "JetBrainsMono Nerd Font", sans-serif;
     font-size: 12px;
@@ -8,18 +10,24 @@
 
 window#waybar {
     background: rgba(25, 25, 25, 0.00); 
-    color: #ffffff;
+    color: #fff;
     border-radius: 12px;
 }
 
-#window {
-    font-weight: bold;
+#window {font-weight: bold;
     padding-left: 10px;
 }
 
 #custom-privacy-dots, #clock, #network, #bluetooth, #battery, #tray, #privacy {
+    color: #fff;
     padding: 0 6px;
     margin: 4px 2px;
+}
+
+#custom-privacy-dots:hover, #clock:hover, #network:hover, #bluetooth:hover, #battery:hover, #tray:hover {
+    background: rgba(25, 25, 25, 0.00); 
+    color: #fff;
+    border-radius: 4px;
 }
 
 #custom-privacy-dots {
@@ -34,20 +42,50 @@ window#waybar {
 } */
 
 #battery.charging {
-    color: #34c759;
+    color: @color2;
 }
 
 #battery.critical:not(.charging) {
-    color: #ff3b30; 
+    color: @color1;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 tooltip {
-    background: rgba(40, 40, 40, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
+    background: @background;
+    border: 2px solid @color1; 
 }
 
 tooltip label {
-    color: #ffffff;
+    color: @foreground;
     padding: 8px;
+}
+
+menu {
+    background: @background;      
+    color: @foreground;         
+    opacity: 1.0;                
+    border: 2px solid @color1;   
+    padding: 4px;               
+}
+
+menu menuitem {
+    background: @background;      
+    color: @foreground;
+    padding: 5px 8px;
+    opacity: 1.0;
+}
+
+menu menuitem:hover {
+    background: @color1; 
+    color: @background;
+    box-shadow: none;
+    opacity: 1.0;
+}
+
+menu separator {
+    background: @color8;
 }
