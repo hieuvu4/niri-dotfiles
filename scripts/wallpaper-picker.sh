@@ -4,8 +4,7 @@ CONFIG="$HOME/.config/niri/conf/layout.kdl"
 WALL_DIR="$HOME/.config/wallpaper"
 COLOR_CACHE="$HOME/.cache/wal/colors"
 SPICE_THEME="$HOME/.config/spicetify/Themes/wal"
-
-OBSIDIAN_VAULT="$HOME/Documents/Obsidian"
+OBSIDIAN_VAULT="$HOME/Documents/obsidian-vault"
 
 TMP_FILE=$(mktemp)
 ranger --choosefile="$TMP_FILE" "$WALL_DIR"
